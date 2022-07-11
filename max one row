@@ -1,0 +1,52 @@
+//PRINT THE ROW NUMBER WITH MAXIMUM NUMBER OF ONES IN BINARY MATRIX .
+
+
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc = new Scanner (System.in);
+            int row = sc.nextInt();
+            int col = sc.nextInt();
+            
+           int[][] arr = new int[row][col];
+            
+            for(int i=0;   i<arr.length;   i++){
+                    for(int j=0;    j<arr[0].length;    j++){
+                            arr[i][j] = sc . nextInt() ;
+                            System.out.print(arr[i][j] + "  ");
+                    }
+                    System.out.println();
+            }
+            
+            
+            int temp =  0;
+           
+            int x = 0;
+            
+            for(int i=0;   i<arr.length;   i++){
+                     int count = 0;
+                    for(int j=0;    j<arr[0].length;    j++){
+                            if(arr[i][j] == 1){
+                                    count++;
+                            }
+                            if(count > temp){
+                                    temp = count ;
+                                    x  = i;
+                            }
+                    }
+            }
+            
+            
+            System.out.println("index number is : " + x);
+            
+            
+    }
+}
+
+        
+OUTPUT = 
+1  1  0  0  
+1  1  1  1  
+1  0  0  0  
+1  1  1  0 
+        
+index number is : 1        
