@@ -1,0 +1,57 @@
+SUM OF UPPER AND LOWER TRIANGULAR ELEMENTS IN THE MATRIX 
+UPPER TRIANGULAR ELEMENTS SUM =>  FOR(J=N-1;  J>=I;   J--)
+LOWER TRIANGULAR ELEMENTS SUM =>  FOR(J=0;   J<=I;   J++)
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+            int row = sc.nextInt();
+            int col = sc.nextInt();
+            
+            int[][]arr = new int[row][col];
+            
+            System.out.println("Input Matrix :- ");
+            for(int i=0;   i<arr.length;   i++){
+                    for(int j=0;   j<arr[0].length;   j++){
+                            arr[i][j] = sc.nextInt();
+                            System.out.print(arr[i][j]  + "  ");
+                    }
+                    System.out.println();
+            }
+            
+            
+            int upperSum = 0;
+            int lowerSum = 0;
+            
+            System.out.println("----------------------------------");
+           
+            for(int i=0;   i<arr.length;   i++){
+                    for(int j=arr.length-1;    j>=i;    j--){
+                            upperSum = upperSum + arr[i][j];
+                    }
+            }
+            
+            
+            for(int i=0;   i<arr.length;  i++){
+                    for(int j=0;   j<=i;   j++){
+                            lowerSum = lowerSum + arr[i][j];
+                    }
+            }
+            
+            
+            System.out.println("sum of upper triangular element's is :-   " + upperSum);
+              System.out.println( "sum of lower triangular element's is:-  " + lowerSum);
+    }
+}
+
+OUTPUT = 
+Input Matrix :- 
+6  5  4  
+1  2  3  
+7  5  8  
+----------------------------------
+sum of upper triangular element's is :-   28
+sum of lower triangular element's is:-  29        
