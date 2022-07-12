@@ -1,0 +1,58 @@
+SEARCH AN ELEMENT IN SORTED MATRIX :-
+BINARY SEARCH .
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc =  new Scanner (System.in);
+            int row = sc.nextInt();
+            int col = sc.nextInt();
+            
+            System.out.println("input matrix is:-");
+            int[][] arr = new int[row][col];
+            for(int i=0;   i<arr.length;    i++){
+                    for(int j=0;   j<arr[0].length;    j++){
+                            arr[i][j] = sc.nextInt();
+                            System.out.print(arr[i][j] + "  ");
+                    }
+                    System.out.println();
+            }
+            
+            int start = 0;
+            int end = row * col -1;
+            int target = 5;
+            
+            while(start <= end){
+                    int mid = (start + end) / 2;
+                    int midX = mid / col;
+                    int midY = mid % col;
+                    
+                    if(arr[midX][midY] == target){
+                            System.out.println("true");
+                            System.out.println("row Index : " + midX + "," + "col Index : "+  midY);
+                            return;
+                    }
+                    
+                    if(arr[midX][midY] < target){
+                            start = mid + 1;
+                    }
+                    
+                    else{
+                            end = mid - 1;
+                    }
+                    
+            }
+            
+            System.out.println("not found");
+            
+    }
+}
+output :-
+input matrix is:-
+1  2  3  
+4  5  6  
+7  8  9  
+true
+row Index : 1,col Index : 1
