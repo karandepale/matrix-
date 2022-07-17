@@ -1,0 +1,77 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+            int row = sc.nextInt();
+            int col = sc.nextInt();
+            
+            int[][] arr = new int[row][col];
+            for(int i=0;   i<arr.length;   i++){
+                    for(int j=0;   j<arr[0].length;    j++){
+                            arr[i][j] = sc.nextInt();
+                            System.out.print(arr[i][j] + "    ");
+                    }
+                    System.out.println();
+            }
+            System.out.println();
+            System.out.println("Spiral printing of matrix :-");
+              System.out.println();
+            
+            int minr = 0;
+            int minc = 0;
+            int maxr = arr.length-1;
+            int maxc = arr[0].length-1;
+            
+            int count = 0;
+            int tne = row * col;
+
+while(tne > count){
+        
+        //left wall :-
+        for(int i=minr, j=minc;    i<=maxr &&  count<tne;    i++){
+                System.out.print(arr[i][j] + "   ");
+                count ++;
+        }
+        minc ++;
+                
+        
+        //bottom wall :-
+        for(int i=maxr,j=minc;    j<=maxc && count<tne;   j++){
+                System.out.print(arr[i][j] + "   ");
+                count++;
+        }
+        maxr--;
+        
+        
+        //Right wall :-
+        for(int i=maxr,j=maxc;     i>=minr &&  count<tne;  i--){
+                System.out.print(arr[i][j] +  "   ");
+                count++;
+        }
+        maxc--;
+        
+        
+        //Top wall :-
+        for(int i=minr, j=maxc;   j>=minc &&  count<tne;   j--){
+                System.out.print(arr[i][j] + "   ");
+                count++;
+        }
+        minr ++;
+           
+            }
+         
+    }
+}
+
+
+
+
+Input matrix :-
+1    2    3    10    12    
+4    5    6    21    23    
+7    8    9    15    45    
+90    67    46    34    65    
+65    79    80    90    50    
+
+Spiral printing of matrix :-
+
+1   4   7   90   65   79   80   90   50   65   45   23   12   10   3   2   5   8   67   46   34   15   21   6   9   
