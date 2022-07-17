@@ -1,0 +1,45 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+            int row = sc.nextInt();
+            int col = sc.nextInt();
+            
+            int[][] arr = new int[row][col];
+            for(int i=0;   i<arr.length;   i++){
+                    for(int j=0;   j<arr[0].length;    j++){
+                            arr[i][j] = sc.nextInt();
+                            System.out.print(arr[i][j] + "    ");
+                    }
+                    System.out.println();
+            }
+            System.out.println();
+            System.out.println("WAVE TRAVERSAL OF THE MATRIX :-");
+              System.out.println();
+            
+           
+            for(int j=0;   j<arr[0].length;    j++){
+                    if(j%2 == 0){
+                            for(int i=0;   i<arr.length;   i++){
+                                    System.out.print(arr[i][j] + "  ");
+                            }
+                    }
+                    else{
+                            for(int i=arr.length-1;   i>=0;    i--){
+                                    System.out.print(arr[i][j] + "  ");
+                            }
+                    }
+            }
+          }
+}
+
+INPUT MATRIX :-
+1    2    3    10    12    
+4    5    6    21    23    
+7    8    9    15    45    
+90    67    46    34    65    
+65    79    80    90    50    
+
+WAVE TRAVERSAL OF THE MATRIX :-
+
+1  4  7  90  65  79  67  8  5  2  3  6  9  46  80  90  34  15  21  10  12  23  45  65  50  
+
