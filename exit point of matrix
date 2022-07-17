@@ -1,0 +1,95 @@
+WE HAVE A BINARY MATRIX AND THE INITIAL DIRECTION IS EAST=0 , AND IF WE GET AN 1 IN THE MATRIX SO WE NEED TO CHANGE THE DIRECTION FROM EAST TO SOUTH AND SO ON....
+
+
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+            int row = sc.nextInt();
+            int col = sc.nextInt();
+            
+            System.out.println("INPUT MATRIX IS :-");
+            int[][] arr = new int[row][col];
+            for(int i=0;   i<arr.length;   i++){
+                    for(int j=0;   j<arr[0].length;    j++){
+                            arr[i][j] = sc.nextInt();
+                            System.out.print(arr[i][j] + "    ");
+                    }
+                    System.out.println();
+            }
+            System.out.println();
+            System.out.println(" EXIT POINT OF THE MATRIX :- ");
+              System.out.println();
+            
+            
+            
+            
+            
+             row = 0;
+             col = 0;
+            int dir = 0;
+            
+while (dir<5){
+        dir = dir + arr[row][col] % 4 ; 
+        
+        if(dir == 0){
+                col ++ ;
+        }
+        
+        else if(dir == 1){
+                row++;
+        }
+        
+        else if(dir == 2){
+                col--;
+        }
+         else if(dir == 3){
+                 row--;
+        }
+        
+        
+        //if row and col values reach at negetive index :-
+        if(row < 0){
+                row++;
+                break;
+        }
+        else if(col < 0){
+                col++;
+                break;
+        }
+        
+        
+        else if( row == arr.length){
+                row--;
+                break;
+        }
+        else if(col == arr[0].length){
+                col--;
+                break;
+        }
+     
+            }
+            
+            
+     System.out.println("row index" + row);
+     System.out.println("col index" + col);
+          
+          }
+}
+
+
+INPUT MATRIX IS :-
+0    1    0    
+0    1    1    
+0    0    0    
+
+ EXIT POINT OF THE MATRIX :- 
+
+row index1
+col index0
+
+
+
