@@ -1,0 +1,51 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+            int row = sc.nextInt();
+            int col = sc.nextInt();
+            
+            System.out.println("INPUT MATRIX IS :-");
+            int[][] arr = new int[row][col];
+            for(int i=0;   i<arr.length;   i++){
+                    for(int j=0;   j<arr[0].length;    j++){
+                            arr[i][j] = sc.nextInt();
+                            System.out.print(arr[i][j] + "    ");
+                    }
+                    System.out.println();
+                    System.out.println();
+            }
+            System.out.println();
+            System.out.println(" DIAGONAL TRAVERSAL OF THE MATRIX:- ");
+              System.out.println();
+            
+            // outer loop for the gap:-
+for(int gap=0;   gap<arr.length;   gap++){
+        for(int i=0, j=gap;    j<arr.length;   i++,j++) {
+                System.out.print(arr[i][j] + "  ");
+                System.out.print(", ");
+        }
+}
+        
+  
+            
+          
+          }
+}
+
+
+          
+ INPUT MATRIX IS :-
+10    20    30    40    
+
+50    60    70    80    
+
+90    15    25    35    
+
+45    65    75    86    
+
+
+ DIAGONAL TRAVERSAL OF THE MATRIX:- 
+
+10  , 60  , 25  , 86  , 20  , 70  , 35  , 30  , 80  , 40  
+            
+            
